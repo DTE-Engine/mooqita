@@ -19,4 +19,4 @@ EXPLANATIONS
 
 4. Regular expressions are text strings used for matching specific patterns like the start of a line. Grep searches text files for patterns and can be used with regular expressions for example, given one or more files it prints all lines that match a particular regular expression pattern. 
 
-5. The Diff command compares two files line by line. Here it showed the difference between the two files with more than 4173 lines being removed.
+5. The Diff command compares two files line by line. The reported difference between the two files was that 4173 lines were removed.
