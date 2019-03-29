@@ -13,4 +13,4 @@ do
 done
 sort -f originalFile originalFile # Sort the file, fold A & a
 grep -v -e ^a -e ^A originalFile > sortedFile # Remove lines starting with A or a
-echo $(diff originalFile sortedFile | wc -l) is the number of removed line # Report the number of removed lines
+echo $(diff originalFile sortedFile | wc -l) is the number of removed lines # Report the number of removed lines
