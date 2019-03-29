@@ -1,0 +1,16 @@
+# /bin/bash
+touch originalFile # Create output file
+characters="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" # Alphanumeric characters
+until [ $(du originalFile | cut -f1) -ge 1024 ] # Until loop to populate and control file size
+do
+	for ((i=0 ; 15 - $i ; i++))
+	do
+		index=$(($RANDOM % 62))
+		char=${characters:index:1}
+		echo -n $char >> originalFile
+	done
+	echo >> originalFile
+done
+sort -f originalFile originalFile # Sort the file, fold A & a
+grep -v -e ^a -e ^A originalFile > sortedFile # Remove lines starting with A or a
+echo $(diff originalFile sortedFile | wc -l) is the number of removed line # Report the number of removed lines
